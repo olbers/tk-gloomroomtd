@@ -12,6 +12,7 @@ public class PhysScene extends Scene {
 	public World pWorld;
 	private PhysicalSprite[] wall, link;
 	private FixtureDef linkFix;
+	private boolean didTouch = false;
 	private static final float SCENE_WIDTH = 427f;
 	private static final float SCENE_HEIGHT = 240f;
 	private ContactListener contListen;
@@ -143,6 +144,7 @@ public class PhysScene extends Scene {
 
 	@Override
 	public void onTouchDown(float x, float y, int action, int pointerCount, int pointerId) {
+		this.didTouch = true;
 		try {
 			this.remove(this.finger[pointerId]);
 		} catch (Exception e) {
@@ -189,7 +191,7 @@ public class PhysScene extends Scene {
 		try {
 			if (this.finger[pointerId].isOnScreen()) {
 				this.remove(this.finger[pointerId]);
-				this.addEye(x, y, true);
+				if (this.didTouch == true) this.addEye(x, y, true);
 			}
 		} catch (Exception exc) {
 			Debug.print("onTouchUp: when trying to remove " + exc.getMessage());
