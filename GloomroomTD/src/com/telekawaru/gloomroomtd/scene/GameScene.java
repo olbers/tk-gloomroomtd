@@ -1,10 +1,17 @@
-package com.telekawaru.gloomroomtd;
+package com.telekawaru.gloomroomtd.scene;
 
 import android.view.KeyEvent;
 import com.stickycoding.rokon.*;
 import com.stickycoding.rokon.device.Accelerometer;
 import com.stickycoding.rokon.device.OnAccelerometerChange;
 import com.stickycoding.rokon.tileengine.*;
+import com.telekawaru.gloomroomtd.MainActivity;
+import com.telekawaru.gloomroomtd.atlas.Textures;
+import com.telekawaru.gloomroomtd.classes.DPad;
+import com.telekawaru.gloomroomtd.classes.GameSprite;
+import com.telekawaru.gloomroomtd.classes.GameWindow;
+import com.telekawaru.gloomroomtd.classes.TextOut;
+import com.telekawaru.gloomroomtd.classes.TileMap;
 
 public class GameScene extends Scene {
 
@@ -70,12 +77,12 @@ public class GameScene extends Scene {
 	}
 
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	public void onKeyDown(int keyCode) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			this.clear();
 			System.gc();
 			MainActivity.mAct.changeScene(new TitleScreen());
-			return true;
+			return;
 		}
 		if (keyCode == KeyEvent.KEYCODE_CAMERA) if (useAccelerometer = !useAccelerometer) {
 			Accelerometer.startListening(this.onAccChange);
@@ -94,21 +101,21 @@ public class GameScene extends Scene {
 			window.zoomTo(1);
 		if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
 			window.zoomIn(.01f);
-			return true;
+			return;
 		}
 		if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
 			window.zoomOut(.01f);
-			return true;
+			return;
 		}
-		return false;
+		return;// false;
 	}
 
 	@Override
-	public boolean onKeyUp(int keyCode, KeyEvent event) {
+	public void onKeyUp(int keyCode) {
 		if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) || (keyCode == KeyEvent.KEYCODE_VOLUME_UP))
-			return true;
+			return;// true;
 		else
-			return false;
+			return;// false;
 	}
 
 	@Override

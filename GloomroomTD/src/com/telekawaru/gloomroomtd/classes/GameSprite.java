@@ -1,6 +1,7 @@
-package com.telekawaru.gloomroomtd;
+package com.telekawaru.gloomroomtd.classes;
 
 import com.stickycoding.rokon.*;
+import com.telekawaru.gloomroomtd.MainActivity;
 
 public class GameSprite extends Sprite {
 	public boolean isMoving = false;
