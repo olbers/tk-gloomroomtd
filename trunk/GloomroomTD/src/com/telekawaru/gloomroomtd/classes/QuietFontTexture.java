@@ -1,4 +1,4 @@
-package com.telekawaru.gloomroomtd;
+package com.telekawaru.gloomroomtd.classes;
 
 import com.stickycoding.rokon.Texture;
 

@@ -1,4 +1,4 @@
-package com.telekawaru.gloomroomtd;
+package com.telekawaru.gloomroomtd.classes;
 
 import com.stickycoding.rokon.*;
 
@@ -22,7 +22,7 @@ public class TextOut {
 	}
 
 	public static void init() {
-		atlas = new TexAtlas();
+		atlas = new TexAtlas(2, 256, 256);
 		atlas.insert(whiteText = new QuietFontTexture("text_white.png", textChars, 12, 7));
 		atlas.insert(whitePunc = new QuietFontTexture("punc_white.png", puncChars));
 		atlas.complete();

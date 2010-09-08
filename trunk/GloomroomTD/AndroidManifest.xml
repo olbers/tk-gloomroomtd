@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.telekawaru.gloomroomtd">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.telekawaru.gloomroomtd" android:installLocation="auto">
 	<uses-sdk android:targetSdkVersion="8" android:minSdkVersion="8" android:maxSdkVersion="8" />
 	<uses-permission android:name="android.permission.VIBRATE"/>
-	<application android:icon="@drawable/icon" android:label="@string/app_name">
+	<application android:icon="@drawable/icon" android:label="@string/app_name" android:enabled="true">
 		<activity android:name=".MainActivity" android:label="@string/app_name" android:screenOrientation="landscape">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-    </application>
+		<activity android:name=".DockActivity" android:label="@string/dock_activity_name" android:screenOrientation="landscape">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.CAR_DOCK" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".DockActivity" android:label="@string/dock_activity_name" android:screenOrientation="landscape">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.DESK_DOCK" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+	</application>
 </manifest> 

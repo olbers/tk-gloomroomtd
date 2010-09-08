@@ -1,6 +1,9 @@
-package com.telekawaru.gloomroomtd;
+package com.telekawaru.gloomroomtd.classes;
 
 import com.stickycoding.rokon.Sprite;
+import com.telekawaru.gloomroomtd.MainActivity;
+import com.telekawaru.gloomroomtd.atlas.Textures;
+import com.telekawaru.gloomroomtd.scene.GameScene;
 
 public class DPad extends Sprite {
 

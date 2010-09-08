@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <string name="app_name">GloomroomTD</string>
+    <string name="app_name">Gloom RoomTD</string>
+<string name="main_activity_name">Gloom Room TD</string>
+<string name="dock_activity_name">Gloomy Dock</string>
 </resources>

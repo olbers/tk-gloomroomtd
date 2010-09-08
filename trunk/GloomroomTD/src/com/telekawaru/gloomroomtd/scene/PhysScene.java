@@ -1,9 +1,12 @@
-package com.telekawaru.gloomroomtd;
+package com.telekawaru.gloomroomtd.scene;
 
 import android.view.KeyEvent;
 import com.stickycoding.rokon.*;
 import com.stickycoding.rokon.device.Accelerometer;
 import com.stickycoding.rokon.device.OnAccelerometerChange;
+import com.telekawaru.gloomroomtd.MainActivity;
+import com.telekawaru.gloomroomtd.atlas.PhysTextures;
+import com.telekawaru.gloomroomtd.classes.GameWindow;
 import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.physics.box2d.*;
 
@@ -22,7 +25,7 @@ public class PhysScene extends Scene {
 
 		@Override
 		public void onAccelerometerChange(float arg0, float arg1, float arg2) {
-			Vector2 newGrav = new Vector2(arg1 * 2, arg0 * 2);
+			Vector2 newGrav = new Vector2(arg1 * 10, arg0 * 10);
 			PhysScene.this.world.setGravity(newGrav);
 		}
 
@@ -97,14 +100,14 @@ public class PhysScene extends Scene {
 	}
 
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	public void onKeyDown(int keyCode) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			this.clear();
 			System.gc();
 			MainActivity.mAct.changeScene(new TitleScreen());
-			return true;
+			return;// true;
 		}
-		return false;
+		return;// false;
 	}
 
 	@Override
@@ -197,5 +200,8 @@ public class PhysScene extends Scene {
 			Debug.print("onTouchUp: when trying to remove " + exc.getMessage());
 		}
 	}
+
+	@Override
+	public void onKeyUp(int keyCode) {}
 
 }

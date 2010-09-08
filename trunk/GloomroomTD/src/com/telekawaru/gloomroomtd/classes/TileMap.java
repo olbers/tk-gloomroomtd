@@ -1,10 +1,12 @@
-package com.telekawaru.gloomroomtd;
+package com.telekawaru.gloomroomtd.classes;
 
 import java.io.IOException;
 import java.io.InputStream;
 import com.stickycoding.rokon.Debug;
 import com.stickycoding.rokon.tileengine.RectangularLayer;
 import com.stickycoding.rokon.tileengine.TiledSprite;
+import com.telekawaru.gloomroomtd.MainActivity;
+import com.telekawaru.gloomroomtd.atlas.Textures;
 
 public class TileMap {
 	private int[][] tileMap;

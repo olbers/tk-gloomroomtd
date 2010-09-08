@@ -1,14 +1,16 @@
 package com.telekawaru.gloomroomtd;
 
-import android.view.KeyEvent;
 import com.stickycoding.rokon.DrawPriority;
 import com.stickycoding.rokon.RokonActivity;
 import com.stickycoding.rokon.Scene;
 import com.stickycoding.rokon.device.Accelerometer;
+import com.telekawaru.gloomroomtd.scene.TitleScreen;
 
 public class MainActivity extends RokonActivity {
 	public static final float GAME_WIDTH = 854f;
 	public static final float GAME_HEIGHT = 480f;
+//	public static final float GAME_WIDTH = 171f;
+//	public static final float GAME_HEIGHT = 96f;
 
 	public static MainActivity mAct;
 
@@ -23,10 +25,10 @@ public class MainActivity extends RokonActivity {
 		this.forceLandscape();
 		this.setGameSize(GAME_WIDTH, GAME_HEIGHT);
 		this.forceGameSize(GAME_WIDTH, GAME_HEIGHT);
-		setDrawPriority(DrawPriority.PRIORITY_VBO);
+		setDrawPriority(DrawPriority.PRIORITY_NORMAL);
 		this.setGraphicsPath("textures/");
 		mAct = this;
-		this.disableBack();
+//		this.disableBack();
 		this.createEngine();
 	}
 
@@ -36,7 +38,7 @@ public class MainActivity extends RokonActivity {
 		super.onDestroy();
 		System.exit(0);
 	}
-
+/*
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (this.isFinishing()) return super.onKeyDown(keyCode, event);
@@ -54,10 +56,11 @@ public class MainActivity extends RokonActivity {
 		else
 			return super.onKeyUp(keyCode, event);
 	}
-
+*/
 	@Override
 	public void onLoadComplete() {
-		if (!this.isFinishing()) this.changeScene(new TitleScreen());
+		//if (!this.isFinishing()) ;
+		this.changeScene(new TitleScreen());
 		//changeScene(new PhysScene());
 	}
 

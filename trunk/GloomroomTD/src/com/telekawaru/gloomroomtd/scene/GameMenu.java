@@ -1,4 +1,4 @@
-package com.telekawaru.gloomroomtd;
+package com.telekawaru.gloomroomtd.scene;
 
 import com.stickycoding.rokon.Scene;
 
@@ -30,5 +30,11 @@ public class GameMenu extends Scene {
 	// TODO Auto-generated method stub
 
 	}
+
+	@Override
+	public void onKeyDown(int keyCode) {}
+
+	@Override
+	public void onKeyUp(int keyCode) {}
 
 }
